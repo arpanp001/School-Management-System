@@ -1,0 +1,174 @@
+/* Container */
+.container {
+  padding: 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  min-height: fit-content;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Heading */
+.title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: #1e3a8a;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  bottom: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 5px;
+  background: linear-gradient(to right, #2563eb, #60a5fa);
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
+}
+
+/* Loading state */
+.loading {
+  font-size: 1.25rem;
+  color: #4b5563;
+  text-align: center;
+  padding: 3rem 0;
+  font-style: italic;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* No assignments message */
+.no-assignments {
+  font-size: 1.125rem;
+  color: #4b5563;
+  text-align: center;
+  padding: 2rem;
+  background-color: #fefcbf;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  font-style: italic;
+}
+
+/* Grid layout for assignment cards */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Assignment card */
+.card {
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, #2563eb, #93c5fd);
+  transition: width 0.3s ease;
+}
+
+/* .card:hover::before {
+  width: 8px;
+} */
+
+/* Course name */
+.course-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.course-name::before {
+  content: "📚";
+  margin-right: 0.5rem;
+  font-size: 1.25rem;
+}
+
+/* Details section */
+.details {
+  margin-top: 0.75rem;
+}
+
+.detail-item {
+  color: #374151;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.detail-item .label {
+  font-weight: 500;
+  color: #1f2937;
+  margin-right: 0.25rem;
+}
+
+.detail-item.subject::before {
+  content: "✎";
+  margin-right: 0.5rem;
+  color: #60a5fa;
+}
+
+.detail-item.teacher::before {
+  content: "👩‍🏫";
+  margin-right: 0.5rem;
+  color: #60a5fa;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

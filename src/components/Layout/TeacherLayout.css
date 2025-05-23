@@ -1,0 +1,24 @@
+.teacher-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  flex: 1;
+  margin-left: 250px;
+  transition: all 0.3s ease;
+  width: calc(100% - 250px);
+  position: relative;
+}
+
+.content-wrapper.sidebar-collapsed {
+  margin-left: 60px;
+  width: calc(100% - 60px);
+}
+
+.main-content {
+  padding: 80px 20px 20px;
+  width: 100%;
+  min-height: calc(100vh - 60px);
+  background-color: #f4f7fc;
+}

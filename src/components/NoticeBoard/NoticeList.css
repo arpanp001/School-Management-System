@@ -1,0 +1,81 @@
+/* NoticeList.css */
+.notice-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.notice-card {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.notice-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.notice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.notice-title {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 600;
+  color: #1f2937; /* Gray-800 */
+}
+
+.notice-content {
+  margin-top: 8px;
+  color: #4b5563; /* Gray-600 */
+  font-size: 1rem;
+}
+
+.notice-meta {
+  margin-top: 8px;
+  font-size: 0.875rem;
+  color: #6b7280; /* Gray-500 */
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-button,
+.delete-button {
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: color 0.2s ease;
+}
+
+.edit-button {
+  color: #3b82f6; /* Blue-500 */
+}
+
+.edit-button:hover {
+  color: #2563eb; /* Blue-600 */
+}
+
+.delete-button {
+  color: #ef4444; /* Red-500 */
+}
+
+.delete-button:hover {
+  color: #dc2626; /* Red-600 */
+}
+
+.loading-text,
+.empty-text {
+  text-align: center;
+  color: #6b7280;
+  font-size: 1rem;
+  padding: 16px;
+}

@@ -1,0 +1,225 @@
+.events-card-container {
+  flex: 0 1 500px; /* Wider width for rectangle */
+  height: 360px; /* Fixed height to maintain original size */
+  min-width: 0;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.98),
+    rgba(235, 240, 255, 0.92)
+  );
+  border-radius: 12px;
+  padding: 20px;
+  color: #1f2937;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content at top */
+  align-items: center;
+  margin: 10px;
+}
+
+.events-card-container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.events-card-container h3 {
+  margin: 0 0 12px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #111827;
+  text-align: center;
+}
+
+.events-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  flex-grow: 1; /* Allow list to take available space */
+  overflow-y: auto; /* Scroll if content exceeds height */
+}
+
+.event-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  margin: 4px 0;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Type-specific background styles */
+.event-item.holiday {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.1),
+    rgba(255, 153, 153, 0.1)
+  );
+}
+
+.event-item.festival {
+  background: linear-gradient(
+    135deg,
+    rgba(76, 175, 80, 0.1),
+    rgba(129, 199, 132, 0.1)
+  );
+}
+
+.event-item.school-function {
+  background: linear-gradient(
+    135deg,
+    rgba(66, 165, 245, 0.1),
+    rgba(144, 202, 249, 0.1)
+  );
+}
+
+.event-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+}
+
+.event-icon {
+  font-size: 1.2rem;
+}
+
+/* Type-specific icon colors */
+.holiday-icon {
+  color: #ff6b6b; /* Red for Holiday */
+}
+
+.festival-icon {
+  color: #4caf50; /* Green for Festival */
+}
+
+.school-function-icon {
+  color: #42a5f5; /* Blue for School Function */
+}
+
+.event-details {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.event-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #111827;
+  line-height: 1.4;
+}
+
+.event-date {
+  font-size: 0.8rem; /* Slightly smaller to fit longer format */
+  color: #1f2937;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 3px 10px; /* Adjusted padding for wider badge */
+  border-radius: 12px;
+  display: inline-block;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.event-type {
+  font-size: 0.85rem;
+  color: #4b5563;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.no-events {
+  margin: 0;
+  color: #6b7280;
+  font-style: italic;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .events-card-container {
+    flex: 0 1 100%;
+    max-width: 100%;
+    margin: 8px 0;
+    padding: 16px;
+    height: 360px; /* Maintain fixed height */
+  }
+
+  .events-card-container h3 {
+    font-size: 1.3rem;
+  }
+
+  .event-item {
+    padding: 6px 10px;
+  }
+
+  .event-icon {
+    font-size: 1.1rem;
+  }
+
+  .event-title {
+    font-size: 0.95rem;
+  }
+
+  .event-date,
+  .event-type {
+    font-size: 0.75rem; /* Smaller for longer date format */
+  }
+
+  .no-events {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .events-card-container {
+    padding: 12px;
+    border-radius: 10px;
+    height: 360px; /* Maintain fixed height */
+  }
+
+  .events-card-container h3 {
+    font-size: 1.2rem;
+  }
+
+  .event-item {
+    padding: 5px 8px;
+  }
+
+  .event-icon {
+    font-size: 1rem;
+  }
+
+  .event-title {
+    font-size: 0.9rem;
+  }
+
+  .event-date,
+  .event-type {
+    font-size: 0.7rem; /* Further reduced for small screens */
+  }
+
+  .no-events {
+    font-size: 0.85rem;
+  }
+}
+
+@media (hover: none) {
+  .events-card-container:hover {
+    transform: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .event-item:hover {
+    transform: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}

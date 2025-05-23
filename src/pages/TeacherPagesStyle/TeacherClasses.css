@@ -1,0 +1,192 @@
+/* TeacherClasses.css */
+
+/* Main container */
+.container {
+  padding: 1rem; /* Matches Tailwind p-4 */
+  max-width: 1280px;
+  margin: 0 auto;
+  background: linear-gradient(
+    120deg,
+    #f9fafb 0%,
+    #e5e7eb 100%
+  ); /* Subtle gradient */
+  min-height: 100vh;
+}
+
+/* Heading */
+.title {
+  font-size: 1.5rem; /* Matches Tailwind text-2xl */
+  font-weight: 700; /* Matches Tailwind font-bold */
+  margin-bottom: 1.5rem; /* Matches Tailwind mb-6 */
+  color: #1e3a8a; /* Deep blue */
+  text-align: center;
+  position: relative;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    #1e40af,
+    #60a5fa
+  ); /* Gradient underline */
+  border-radius: 2px;
+}
+
+/* Loading state */
+.loading {
+  font-size: 1.125rem;
+  color: #4b5563; /* Matches Tailwind text-gray-600 */
+  text-align: center;
+  padding: 2rem 0;
+  font-style: italic;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Grid layout for class cards */
+.grid-container {
+  display: grid;
+  gap: 1rem; /* Matches Tailwind gap-4 */
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* Matches Tailwind md:grid-cols-2 */
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr); /* Matches Tailwind lg:grid-cols-3 */
+  }
+}
+
+/* Class card */
+.card {
+  padding: 1.5rem; /* Matches Tailwind p-6 */
+  background: #ffffff; /* Matches Tailwind bg-white */
+  border-radius: 0.75rem; /* Matches Tailwind rounded-lg */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Matches Tailwind shadow with slight tweak */
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px); /* Slight lift on hover */
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    #2563eb,
+    #93c5fd
+  ); /* Gradient accent */
+  transition: width 0.3s ease;
+}
+
+.card:hover::before {
+  width: 10px; /* Wider accent on hover */
+}
+
+/* Class name */
+.class-name {
+  font-size: 1.25rem; /* Matches Tailwind text-xl */
+  font-weight: 600; /* Matches Tailwind font-semibold */
+  color: #1e40af; /* Darker blue */
+  margin-bottom: 1rem; /* Matches Tailwind mb-4 */
+  display: flex;
+  align-items: center;
+}
+
+.class-name::before {
+  content: "🏫"; /* School emoji */
+  margin-right: 0.5rem;
+}
+
+/* Student count */
+.student-count {
+  color: #4b5563; /* Matches Tailwind text-gray-600 */
+  font-size: 1rem;
+  margin-bottom: 0.5rem; /* Matches Tailwind mb-2 */
+}
+
+/* Student list section */
+.student-list-title {
+  font-weight: 500; /* Matches Tailwind font-medium */
+  color: #1f2937; /* Dark gray */
+  margin-bottom: 0.5rem; /* Matches Tailwind mb-2 */
+  margin-top: 1rem; /* Matches Tailwind mt-4 */
+}
+
+/* Student list */
+.student-list {
+  list-style-type: disc; /* Matches Tailwind list-disc */
+  padding-left: 1.25rem; /* Matches Tailwind pl-5 */
+  max-height: 150px; /* Limit height for scroll */
+  overflow-y: auto; /* Enable scrolling if needed */
+}
+
+.student-item {
+  color: #4b5563; /* Matches Tailwind text-gray-600 */
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.student-item:hover {
+  color: #2563eb; /* Blue on hover */
+}
+
+/* Scrollbar styling for student list */
+.student-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.student-list::-webkit-scrollbar-thumb {
+  background: #93c5fd;
+  border-radius: 3px;
+}
+
+.student-list::-webkit-scrollbar-track {
+  background: #e5e7eb;
+}
+
+/* Animation for loading */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Card entrance animation */
+.card {
+  animation: slideUp 0.4s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

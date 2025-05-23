@@ -1,0 +1,457 @@
+:root {
+  --primary: #8d6cd8;
+  --primary-hover: #7c3aed;
+  --secondary: #facc15;
+  --accent: #10b981;
+  --background: #7c3aed; /* Changed to deeper purple */
+  --card-bg: #f5f3ff; /* Light, soft lavender */
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --border: rgba(203, 213, 225, 0.6);
+  --error: #ef4444;
+  --error-bg: rgba(254, 242, 242, 0.9);
+  --shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  --glass: rgba(255, 255, 255, 0.4);
+  --radius: clamp(24px, 3vw, 32px);
+  --spacing: clamp(1rem, 2vw, 2rem);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #9370db, #7c3aed, #6930c3);
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  position: relative;
+  padding: var(--spacing);
+}
+
+/* Flowing background lines */
+.auth-wrapper::before,
+.auth-wrapper::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 0;
+  transform: rotate(-15deg);
+}
+
+.auth-wrapper::before {
+  top: 10%;
+  left: -50%;
+  animation: flowLine 10s infinite linear;
+}
+
+.auth-wrapper::after {
+  top: 40%;
+  left: -50%;
+  animation: flowLine 15s infinite linear;
+  opacity: 0.5;
+}
+
+@keyframes flowLine {
+  0% {
+    transform: translateX(-5%) rotate(-15deg);
+  }
+  100% {
+    transform: translateX(5%) rotate(-15deg);
+  }
+}
+
+/* Additional flowing lines */
+.flowing-line {
+  position: absolute;
+  width: 200%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.07);
+  z-index: 0;
+}
+
+.flowing-line:nth-child(1) {
+  top: 20%;
+  transform: rotate(-15deg);
+  animation: flowLine 12s infinite linear;
+}
+
+.flowing-line:nth-child(2) {
+  top: 60%;
+  transform: rotate(-12deg);
+  animation: flowLine 20s infinite linear reverse;
+}
+
+.flowing-line:nth-child(3) {
+  top: 80%;
+  transform: rotate(-18deg);
+  animation: flowLine 17s infinite linear;
+}
+
+.auth-split {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1100px;
+  min-height: 60vh;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+}
+
+.auth-illustration {
+  flex: 1 1 55%;
+  background-color: rgba(125, 58, 237, 0.9); /* Purple background */
+  background-image: url("../assets/boy-3.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+  transition: transform 0.5s ease-in-out;
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+}
+
+.auth-illustration::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.illustration-content {
+  color: #fff;
+  text-align: center;
+  padding: var(--spacing);
+  z-index: 2;
+  position: relative;
+}
+
+.auth-content {
+  flex: 1 1 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing);
+  background: #fff;
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: clamp(300px, 40vw, 400px);
+  padding: var(--spacing);
+  background: #fff;
+  /* Keep animation effects */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+/* Remove glass and border effect to match the design */
+.auth-card::before {
+  display: none;
+}
+
+.auth-header {
+  text-align: left;
+  margin-bottom: var(--spacing);
+}
+
+.welcome-back {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 600;
+  color: #fff;
+  background: var(--primary);
+  -webkit-text-fill-color: #fff;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.auth-title {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1.5rem, 3vw, 1.5rem);
+  font-weight: 600;
+  color: var(--text);
+  margin: 1rem 0;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.form-group {
+  position: relative;
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+label {
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.form-input {
+  width: 100%;
+  padding: clamp(0.75rem, 1.5vw, 1rem) clamp(1rem, 2vw, 1.25rem);
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  color: var(--text);
+  background: #fff;
+  transition: var(--transition);
+  box-shadow: none;
+}
+
+.form-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.15);
+  outline: none;
+}
+
+.form-input:hover:not(:focus):not(:disabled) {
+  border-color: var(--primary-hover);
+}
+
+.auth-button {
+  padding: clamp(0.75rem, 1.5vw, 1rem);
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.auth-button:hover:not(:disabled) {
+  background: var(--primary-hover);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 16px rgba(139, 92, 246, 0.4);
+}
+
+.auth-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.auth-button.loading {
+  position: relative;
+  padding-right: 2.5rem;
+}
+
+.auth-button.loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.auth-error {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: clamp(0.75rem, 1.5vw, 1rem);
+  background: var(--error-bg);
+  color: var(--error);
+  border-radius: 12px;
+  font-size: clamp(0.85rem, 1.5vw, 0.9rem);
+  margin-bottom: var(--spacing);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  animation: animate-error 0.3s ease-in-out;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: var(--spacing);
+  font-size: clamp(0.85rem, 1.5vw, 0.9rem);
+  color: var(--text-muted);
+}
+
+.auth-link {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.auth-link:hover {
+  color: var(--primary-hover);
+  color: white;
+  text-decoration: none;
+}
+
+.auth-link:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Remove particle background to match the design */
+.particle-background {
+  display: none;
+}
+
+.password-strength {
+  height: 6px;
+  border-radius: 3px;
+  margin-top: 6px;
+  transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.password-strength[data-strength="0"] {
+  width: 0%;
+}
+
+.password-strength[data-strength="1"] {
+  width: 25%;
+  background-color: #ef4444;
+}
+
+.password-strength[data-strength="2"] {
+  width: 50%;
+  background-color: #facc15;
+}
+
+.password-strength[data-strength="3"] {
+  width: 75%;
+  background-color: #10b981;
+}
+
+.password-strength[data-strength="4"] {
+  width: 100%;
+  background-color: #059669;
+}
+
+@media (max-width: 1024px) {
+  .auth-split {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .auth-illustration,
+  .auth-content {
+    flex: 1 1 100%;
+    border-radius: 0;
+  }
+  .auth-illustration {
+    min-height: 250px;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    border-bottom-left-radius: 0;
+  }
+  .auth-content {
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+    border-top-right-radius: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: clamp(1rem, 3vw, 1.5rem);
+  }
+  .welcome-back {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .auth-title {
+    font-size: 1.5rem;
+  }
+}
+
+@keyframes animate-error {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+.toggle-password {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.toggle-password:hover {
+  color: var(--primary);
+}

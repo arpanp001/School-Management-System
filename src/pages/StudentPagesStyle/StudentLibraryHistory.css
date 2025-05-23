@@ -1,0 +1,295 @@
+/* StudentLibraryHistory.css */
+/* Professional styling for the student library history interface */
+
+.slh-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* Header styles */
+.slh-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 1rem;
+}
+
+.slh-header-icon {
+  margin-right: 0.75rem;
+  color: #2563eb;
+}
+
+.slh-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+/* Card container */
+.slh-card {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+/* Loading state */
+.slh-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: #64748b;
+}
+
+.slh-loading-icon {
+  margin-right: 0.75rem;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Empty state */
+.slh-no-history {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.slh-no-history-icon {
+  color: #94a3b8;
+  margin-bottom: 1rem;
+}
+
+.slh-no-history-text {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #334155;
+  margin: 0.5rem 0;
+}
+
+.slh-no-history-hint {
+  color: #64748b;
+  margin: 0.5rem 0 0;
+}
+
+/* Table styles */
+.slh-table-container {
+  overflow-x: auto;
+}
+
+.slh-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.slh-table-header {
+  background-color: #e0e6eb;
+}
+
+.slh-table-cell {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.slh-table-row:hover {
+  background-color: #f8fafc;
+}
+
+.slh-cell-title {
+  font-weight: 500;
+  color: #1e293b;
+  width: 30%;
+}
+
+.slh-cell-issue-date,
+.slh-cell-due-date,
+.slh-cell-return-date {
+  width: 15%;
+}
+
+.slh-cell-status {
+  width: 15%;
+}
+
+.slh-cell-action {
+  width: 10%;
+  text-align: center;
+}
+
+/* Status badges */
+.slh-status-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.slh-status-issued {
+  background-color: #eef2ff;
+  color: #4338ca;
+}
+
+.slh-status-overdue {
+  background-color: #fef2f2;
+  color: #b91c1c;
+}
+
+.slh-status-returned {
+  background-color: #ecfdf5;
+  color: #065f46;
+}
+
+.slh-days-count {
+  font-size: 0.7rem;
+  color: red;
+  font-weight: 450;
+  margin-top: 0.125rem;
+}
+
+/* Button styles */
+.slh-return-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dcfce7;
+  color: #166534;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.slh-return-button:hover {
+  background-color: #bbf7d0;
+  color: white;
+}
+
+.slh-return-button:active {
+  transform: scale(0.98);
+}
+
+.slh-return-icon {
+  margin-right: 0.375rem;
+}
+
+.slh-no-action {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* Information section */
+.slh-info-section {
+  margin-top: 2rem;
+}
+
+.slh-info-card {
+  background-color: #e0e6eb;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  border-left: 4px solid #2563eb;
+}
+
+.slh-info-title {
+  color: #1e293b;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.slh-info-list {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: #475569;
+}
+
+.slh-info-list li {
+  margin-bottom: 0.75rem;
+}
+
+.slh-info-list li strong {
+  color: #334155;
+}
+
+.slh-toast-icon {
+  margin-right: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .slh-cell-issue-date,
+  .slh-cell-return-date {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .slh-container {
+    padding: 1rem;
+  }
+
+  .slh-cell-title {
+    width: 40%;
+  }
+
+  .slh-cell-due-date {
+    width: 20%;
+  }
+
+  .slh-cell-status {
+    width: 25%;
+  }
+
+  .slh-cell-action {
+    width: 15%;
+  }
+}
+
+@media (max-width: 576px) {
+  .slh-status-badge {
+    padding: 0.25rem 0.5rem;
+  }
+
+  .slh-days-count {
+    display: none;
+  }
+
+  .slh-table-cell {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .slh-return-button {
+    padding: 0.375rem 0.5rem;
+  }
+
+  .slh-return-icon {
+    margin-right: 0;
+  }
+
+  .slh-return-button span {
+    display: none;
+  }
+}

@@ -1,0 +1,26 @@
+/* src/components/TeacherDashboardCardCss/GradesCard.css */
+.card {
+  color: #000;
+  padding: 15px;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.dropdowns {
+  margin-bottom: 10px;
+}
+
+.dropdowns .form-control {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.card p {
+  font-size: 16px;
+  margin: 5px 0;
+  text-align: center;
+}

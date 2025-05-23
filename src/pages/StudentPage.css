@@ -1,0 +1,65 @@
+.student-dashboard-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fb;
+  min-height: 100vh;
+}
+
+.student-dashboard-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: rgb(16, 97, 168);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.stats-cards-row,
+.middle-cards-row,
+.bottom-cards-row,
+.extra-cards-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.extra-cards-row {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.assignment-exam-group,
+.notice-progress-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.assignment-exam-group > *,
+.notice-progress-group > * {
+  flex: 1;
+  min-width: 0; /* Allow shrinking below content size if needed */
+}
+
+/* Make the cards responsive */
+@media (max-width: 1200px) {
+  .stats-cards-row,
+  .middle-cards-row,
+  .bottom-cards-row,
+  .assignment-exam-group,
+  .notice-progress-group {
+    flex-direction: column;
+  }
+}
+
+/* Ensure minimum width for smaller screens */
+@media (max-width: 600px) {
+  .stats-cards-row > *,
+  .middle-cards-row > *,
+  .bottom-cards-row > *,
+  .assignment-exam-group > *,
+  .notice-progress-group > * {
+    min-width: 100%;
+  }
+}

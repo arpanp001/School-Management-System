@@ -1,0 +1,327 @@
+.library-card-container {
+  flex: 0 1 500px; /* Wider width for rectangle */
+  height: 360px; /* Fixed height to maintain original size */
+  min-width: 0;
+  background: linear-gradient(
+    145deg,
+    rgba(69, 123, 157, 0.95),
+    /* Vibrant blue */ rgba(168, 218, 220, 0.9) /* Light purple */
+  );
+  border-radius: 12px;
+  padding: 20px;
+  color: #1d3557; /* Darker blue for primary text */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content at top */
+  align-items: center;
+  margin: 10px;
+}
+
+.library-card-container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.library-card-container h3 {
+  margin: 0 0 12px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1d3557;
+  text-align: center;
+}
+
+.library-content {
+  width: 100%;
+  flex-grow: 1;
+  overflow-y: auto; /* Scroll if content exceeds height */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.overdue-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #d3d3d3;
+  border-radius: 8px;
+}
+
+.overdue-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1d3557;
+}
+
+.overdue-count {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: #2a9d8f; /* Green when no overdue */
+  color: #ffffff;
+}
+
+.overdue-count.has-overdue {
+  background: #e63946; /* Red for overdue */
+}
+
+.overdue-count.no-overdue {
+  background: #2a9d8f; /* Green for no overdue */
+}
+
+.new-books-section,
+.requests-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-books-section h4,
+.requests-section h4 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1d3557;
+}
+
+.new-books-list,
+.requests-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.new-book-item,
+.request-item {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.new-book-item:hover,
+.request-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Colorful backgrounds for new book items */
+.new-book-item.color-0 {
+  background: linear-gradient(
+    135deg,
+    rgba(69, 123, 157, 0.1),
+    rgba(168, 218, 220, 0.1)
+  ); /* Blue */
+}
+
+.new-book-item.color-1 {
+  background: linear-gradient(
+    135deg,
+    rgba(42, 157, 143, 0.1),
+    rgba(168, 218, 220, 0.1)
+  ); /* Green */
+}
+
+.new-book-item.color-2 {
+  background: linear-gradient(
+    135deg,
+    rgba(231, 111, 81, 0.1),
+    rgba(241, 250, 238, 0.1)
+  ); /* Pink */
+}
+
+/* Status-specific backgrounds for request items */
+.request-item.pending {
+  background: linear-gradient(
+    135deg,
+    rgba(244, 162, 97, 0.1),
+    rgba(231, 111, 81, 0.1)
+  ); /* Amber */
+}
+
+.request-item.approved {
+  background: linear-gradient(
+    135deg,
+    rgba(42, 157, 143, 0.1),
+    rgba(168, 218, 220, 0.1)
+  ); /* Green */
+}
+
+.request-item.rejected {
+  background: linear-gradient(
+    135deg,
+    rgba(230, 57, 70, 0.1),
+    rgba(241, 250, 238, 0.1)
+  ); /* Red */
+}
+
+.book-title,
+.request-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1d3557;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Truncate long titles */
+  max-width: 100%; /* Ensure it fits within container */
+}
+
+.book-author,
+.request-date,
+.request-status {
+  font-size: 0.8rem;
+  color: #457b9d; /* Softer blue for secondary text */
+  line-height: 1.4;
+}
+
+.request-date {
+  background: rgba(29, 53, 87, 0.15); /* Darker badge for contrast */
+  padding: 2px 8px;
+  border-radius: 12px;
+  display: inline-block;
+  font-weight: 500;
+  color: #1d3557;
+}
+
+.request-status {
+  font-style: italic;
+}
+
+.request-status.pending {
+  color: #f4a261; /* Vibrant amber */
+}
+
+.request-status.approved {
+  color: #2a9d8f; /* Vibrant green */
+}
+
+.request-status.rejected {
+  color: #e63946; /* Vibrant red */
+}
+
+.no-data {
+  margin: 0;
+  color: #457b9d;
+  font-style: italic;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .library-card-container {
+    flex: 0 1 100%;
+    max-width: 100%;
+    margin: 8px 0;
+    padding: 16px;
+    height: 360px; /* Maintain fixed height */
+  }
+
+  .library-card-container h3 {
+    font-size: 1.3rem;
+  }
+
+  .overdue-section {
+    padding: 6px 10px;
+  }
+
+  .overdue-label {
+    font-size: 0.85rem;
+  }
+
+  .overdue-count {
+    font-size: 0.95rem;
+  }
+
+  .new-books-section h4,
+  .requests-section h4 {
+    font-size: 0.95rem;
+  }
+
+  .new-book-item,
+  .request-item {
+    padding: 5px 10px;
+  }
+
+  .book-title,
+  .request-title {
+    font-size: 0.85rem;
+  }
+
+  .book-author,
+  .request-date,
+  .request-status {
+    font-size: 0.75rem;
+  }
+
+  .no-data {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .library-card-container {
+    padding: 12px;
+    border-radius: 10px;
+    height: 360px; /* Maintain fixed height */
+  }
+
+  .library-card-container h3 {
+    font-size: 1.2rem;
+  }
+
+  .overdue-section {
+    padding: 5px 8px;
+  }
+
+  .overdue-label {
+    font-size: 0.8rem;
+  }
+
+  .overdue-count {
+    font-size: 0.9rem;
+  }
+
+  .new-books-section h4,
+  .requests-section h4 {
+    font-size: 0.9rem;
+  }
+
+  .new-book-item,
+  .request-item {
+    padding: 4px 8px;
+  }
+
+  .book-title,
+  .request-title {
+    font-size: 0.8rem;
+  }
+
+  .book-author,
+  .request-date,
+  .request-status {
+    font-size: 0.7rem;
+  }
+
+  .no-data {
+    font-size: 0.75rem;
+  }
+}
+
+@media (hover: none) {
+  .library-card-container:hover {
+    transform: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .new-book-item:hover,
+  .request-item:hover {
+    transform: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+}

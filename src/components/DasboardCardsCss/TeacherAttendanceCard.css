@@ -1,0 +1,115 @@
+.teacher-attendance-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.attendance-title {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.attendance-stats {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(80px, 1fr)
+  ); /* Adjust minmax value as needed */
+  gap: 10px; /* Space between items */
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #888;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.stat-value.present {
+  color: #28a745; /* Green for Present */
+}
+
+.stat-value.absent {
+  color: #dc3545; /* Red for Absent */
+}
+
+.stat-value.on-leave {
+  color: #ffca28; /* Yellow for On Leave */
+}
+
+.stat-value.half-day {
+  color: #17a2b8; /* Cyan for Half-Day */
+}
+
+.stat-value.overtime {
+  color: #6f42c1; /* Purple for Overtime */
+}
+
+.stat-value.early-exit {
+  color: #fd7e14; /* Orange for Early Exit */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .teacher-attendance-card {
+    padding: 15px;
+  }
+
+  .attendance-title {
+    font-size: 12px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+  }
+
+  .stat-value {
+    font-size: 16px;
+  }
+
+  .attendance-stats {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(70px, 1fr)
+    ); /* Slightly smaller columns */
+  }
+}
+
+@media (max-width: 480px) {
+  .teacher-attendance-card {
+    padding: 10px;
+  }
+
+  .attendance-title {
+    font-size: 10px;
+  }
+
+  .stat-label {
+    font-size: 8px;
+  }
+
+  .stat-value {
+    font-size: 14px;
+  }
+
+  .attendance-stats {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(60px, 1fr)
+    ); /* Even smaller columns */
+  }
+}

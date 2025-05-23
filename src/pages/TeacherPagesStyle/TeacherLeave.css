@@ -1,0 +1,324 @@
+/* Main container */
+.leave-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 100vh;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Heading styles */
+.leave-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: #1e3a8a;
+  text-align: center;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.leave-title::after {
+  content: "";
+  position: absolute;
+  bottom: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 5px;
+  background: linear-gradient(to right, #1e40af, #60a5fa);
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
+}
+
+.leave-subtitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: #1e40af;
+  text-align: center;
+}
+
+/* Loading or no requests message */
+.leave-message {
+  font-size: 1.125rem;
+  color: #4b5563;
+  text-align: center;
+  padding: 2rem 0;
+  background-color: #e0f2fe;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Form styles */
+.leave-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.leave-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.leave-form-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e40af;
+  text-transform: uppercase;
+}
+
+.leave-form-select,
+.leave-form-input,
+.leave-form-textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #bfdbfe;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: #1f2937;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.leave-form-select:hover,
+.leave-form-input:hover,
+.leave-form-textarea:hover {
+  border-color: #60a5fa;
+}
+
+.leave-form-select:focus,
+.leave-form-input:focus,
+.leave-form-textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+}
+
+.leave-form-button {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(to right, #1e40af, #60a5fa);
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.leave-form-button:hover {
+  background: linear-gradient(to right, #1e3a8a, #3b82f6);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.leave-form-button:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Table wrapper */
+.leave-table-wrapper {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Table styles */
+.leave-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+.leave-table thead {
+  background: linear-gradient(to right, #1e40af, #60a5fa);
+  color: #ffffff;
+}
+
+.leave-table th {
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.leave-table tbody tr {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.leave-table tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+.leave-table td {
+  padding: 1rem;
+  font-size: 1rem;
+  color: #1f2937;
+  text-align: left;
+}
+
+/* Empty table message */
+.leave-table-empty {
+  text-align: center;
+  color: #4b5563;
+  font-style: italic;
+}
+
+/* Status badge */
+.leave-status-badge {
+  padding: 0.4em 0.6em;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.leave-status-success {
+  background-color: #10b981;
+  color: #ffffff;
+}
+
+.leave-status-warning {
+  background-color: #f59e0b;
+  color: #ffffff;
+}
+
+.leave-status-danger {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+/* Pagination styles */
+.leave-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+/* Pagination buttons */
+.leave-pagination-button {
+  padding: 0.5rem 1rem;
+  background: linear-gradient(to right, #e0f2fe, #bfdbfe);
+  color: #1e40af;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.leave-pagination-button:hover {
+  background: linear-gradient(to right, #bfdbfe, #93c5fd);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.leave-pagination-button.active {
+  background: linear-gradient(to right, #1e40af, #60a5fa);
+  color: #ffffff;
+}
+
+.leave-pagination-button:disabled {
+  background: #d1d5db;
+  color: #6b7280;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .leave-container {
+    padding: 1rem;
+  }
+
+  .leave-title {
+    font-size: 1.5rem;
+  }
+
+  .leave-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .leave-form-select,
+  .leave-form-input,
+  .leave-form-textarea {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .leave-form-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .leave-table th,
+  .leave-table td {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .leave-status-badge {
+    font-size: 0.75rem;
+  }
+
+  .leave-pagination-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .leave-title {
+    font-size: 1.2rem;
+  }
+
+  .leave-subtitle {
+    font-size: 1rem;
+  }
+
+  .leave-form-select,
+  .leave-form-input,
+  .leave-form-textarea {
+    font-size: 0.85rem;
+  }
+
+  .leave-form-button {
+    font-size: 0.85rem;
+  }
+
+  .leave-table th,
+  .leave-table td {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .leave-status-badge {
+    font-size: 0.7rem;
+  }
+
+  .leave-pagination-button {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+  }
+}

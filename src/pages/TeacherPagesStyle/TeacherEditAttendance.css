@@ -1,0 +1,328 @@
+/* Container styles */
+.edit-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(
+    100vh - 40px
+  ); /* Ensure container takes full viewport height minus padding */
+}
+
+/* Page title */
+.edit-page-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Loading Spinner */
+.edit-loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  color: #6b7280;
+}
+
+.edit-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e2e8f0;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error message */
+.edit-error-message {
+  text-align: center;
+  color: #ef4444;
+  font-size: 16px;
+  padding: 20px;
+  background-color: #fee2e2;
+  border-radius: 8px;
+}
+
+/* No records message */
+.edit-no-records {
+  text-align: center;
+  color: #6b7280;
+  font-size: 16px;
+  padding: 20px;
+}
+
+/* Form styles */
+.edit-form-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.edit-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.edit-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.edit-form-group label {
+  font-size: 1.1rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.edit-form-input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edit-form-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+}
+
+.edit-form-input::placeholder {
+  color: #9ca3af;
+}
+
+/* Search bar styles */
+.edit-search-container {
+  margin-bottom: 20px;
+  max-width: 400px;
+}
+
+.edit-search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edit-search-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+}
+
+.edit-search-input::placeholder {
+  color: #9ca3af;
+}
+
+/* Table styles */
+.edit-table-wrapper {
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1; /* Allow the table wrapper to grow and fill remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-table-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.edit-table-header h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.edit-table-container {
+  flex: 1; /* Allow the container to grow and fill the wrapper */
+  overflow-x: auto;
+  overflow-y: auto; /* Enable vertical scrolling if the table content overflows */
+  margin-top: 15px;
+  min-height: 200px; /* Ensure a minimum height for the table */
+}
+
+.edit-attendance-table {
+  width: 100%; /* Ensure the table takes the full width of its container */
+  border-collapse: collapse;
+  min-width: 600px; /* Maintain minimum width for readability */
+}
+
+.edit-attendance-table th,
+.edit-attendance-table td {
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.edit-attendance-table th {
+  background-color: #f9fafb;
+  color: #6b7280;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  position: sticky; /* Keep the header fixed while scrolling */
+  top: 0;
+  z-index: 1;
+}
+
+/* .edit-attendance-table td {
+  color: #1f2937;
+} */
+
+.edit-attendance-table tr {
+  border-bottom: 1px solid #e2e8f0;
+  transition: background-color 0.3s ease;
+}
+
+.edit-attendance-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.edit-attendance-table tr:last-child {
+  border-bottom: none;
+}
+
+.edit-no-data {
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+  padding: 15px;
+}
+
+/* Status styles */
+.edit-status-present {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.edit-status-absent {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* Button styles */
+.edit-toggle-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #f59e0b;
+  color: #fff;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.edit-toggle-btn:hover {
+  background-color: #d97706;
+  transform: scale(1.05);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .edit-container {
+    padding: 15px;
+  }
+
+  .edit-page-title {
+    font-size: 1.5rem;
+  }
+
+  .edit-form-container {
+    padding: 15px;
+  }
+
+  .edit-form-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .edit-search-container {
+    max-width: 100%;
+  }
+
+  .edit-table-wrapper {
+    padding: 15px;
+  }
+
+  .edit-attendance-table {
+    min-width: 600px;
+  }
+
+  .edit-attendance-table th,
+  .edit-attendance-table td {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .edit-toggle-btn {
+    width: 100%;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .edit-page-title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .edit-form-container {
+    padding: 10px;
+  }
+
+  .edit-form-group label {
+    font-size: 0.9rem;
+  }
+
+  .edit-form-input {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  .edit-search-input {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  .edit-table-wrapper {
+    padding: 10px;
+  }
+
+  .edit-attendance-table th,
+  .edit-attendance-table td {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+
+  .edit-toggle-btn {
+    font-size: 0.85rem;
+    padding: 6px;
+  }
+}

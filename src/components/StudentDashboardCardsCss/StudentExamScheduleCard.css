@@ -1,0 +1,177 @@
+.student-exam-schedule-card {
+  background-color: white !important;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  flex: 1;
+  min-width: 320px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 4px solid #6366f1;
+  position: relative;
+  overflow: hidden;
+}
+
+.student-exam-schedule-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.student-exam-schedule-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.student-exam-schedule-card h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.student-exam-schedule-card h2::before {
+  content: "📚";
+  font-size: 24px;
+}
+
+.activity-section {
+  margin-bottom: 20px;
+}
+
+.activity-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #6366f1;
+  margin: 0 0 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.activity-section h3.recent-books::before {
+  content: "🆕";
+  font-size: 18px;
+}
+
+.activity-section h3.book-requests::before {
+  content: "📋";
+  font-size: 18px;
+}
+
+.activity-section h3.overdue-books::before {
+  content: "⏰";
+  font-size: 18px;
+}
+
+.activity-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.activity-section li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  color: black;
+}
+
+.activity-section span {
+  font-weight: 500;
+  color: black;
+}
+
+.activity-section li span.status {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.activity-section li span.status-pending {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.activity-section li span.status-approved {
+  background: #aee2c0;
+  color: #033a17;
+}
+
+.activity-section li span.status-rejected {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.activity-section p.no-data {
+  font-size: 14px;
+  color: #6b7280;
+  font-style: italic;
+  text-align: center;
+  background: #f3f4f6;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.activity-section p.overdue-count {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ef4444;
+  text-align: center;
+  background: #fef2f2;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #f87171;
+}
+
+.student-exam-schedule-card p.error {
+  font-size: 16px;
+  color: #ef4444;
+  text-align: center;
+  margin: 20px 0;
+  background: #fef2e2;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #f87171;
+}
+
+@media (max-width: 600px) {
+  .student-exam-schedule-card {
+    padding: 16px;
+    min-width: 280px;
+  }
+
+  .student-exam-schedule-card h2 {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .activity-section h3 {
+    font-size: 14px;
+  }
+
+  .activity-section li {
+    font-size: 13px;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .activity-section li span.status {
+    font-size: 11px;
+    padding: 2px 6px;
+  }
+
+  .activity-section p.no-data,
+  .student-exam-schedule-card p.error,
+  .activity-section p.overdue-count {
+    font-size: 14px;
+    padding: 8px;
+  }
+}

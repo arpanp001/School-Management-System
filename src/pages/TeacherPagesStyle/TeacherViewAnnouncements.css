@@ -1,0 +1,186 @@
+/* Main container */
+.view-announcements-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Heading styles */
+.view-announcements-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: #1e3a8a;
+  text-align: center;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.view-announcements-title::after {
+  content: "";
+  position: absolute;
+  bottom: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 5px;
+  background: linear-gradient(to right, #1e40af, #60a5fa);
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
+}
+
+/* Loading or no announcements message */
+.view-announcements-message {
+  font-size: 1.125rem;
+  color: #4b5563;
+  text-align: center;
+  padding: 2rem 0;
+  background-color: #e0f2fe;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Table wrapper */
+.view-announcements-table-wrapper {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Table styles */
+.view-announcements-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+/* Table header */
+.view-announcements-table thead {
+  background: linear-gradient(to right, #1e40af, #60a5fa);
+  color: #ffffff;
+}
+
+.view-announcements-table th {
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+/* Table body */
+.view-announcements-table tbody tr {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.view-announcements-table tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+.view-announcements-table td {
+  padding: 1rem;
+  font-size: 1rem;
+  color: #1f2937;
+}
+
+.view-announcements-table td a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.view-announcements-table td a:hover {
+  color: #1e40af;
+}
+
+/* Empty table message */
+.view-announcements-table-empty {
+  text-align: center;
+  color: #4b5563;
+  font-style: italic;
+}
+
+/* Pagination styles */
+.view-announcements-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+/* Pagination buttons */
+.view-announcements-pagination-button {
+  padding: 0.5rem 1rem;
+  background: linear-gradient(to right, #e0f2fe, #bfdbfe);
+  color: #1e40af;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.view-announcements-pagination-button:hover {
+  background: linear-gradient(to right, #bfdbfe, #93c5fd);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.view-announcements-pagination-button.active {
+  background: linear-gradient(to right, #1e40af, #60a5fa);
+  color: #ffffff;
+}
+
+.view-announcements-pagination-button:disabled {
+  background: #d1d5db;
+  color: #6b7280;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .view-announcements-container {
+    padding: 1rem;
+  }
+
+  .view-announcements-title {
+    font-size: 1.5rem;
+  }
+
+  .view-announcements-table th,
+  .view-announcements-table td {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .view-announcements-pagination-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .view-announcements-title {
+    font-size: 1.2rem;
+  }
+
+  .view-announcements-table th,
+  .view-announcements-table td {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .view-announcements-pagination-button {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+  }
+}

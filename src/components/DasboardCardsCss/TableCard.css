@@ -1,0 +1,405 @@
+.table-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  margin: 12px;
+  flex: 1;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.table-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.table-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(104, 156, 216, 0.15) 0%,
+    rgba(230, 165, 165, 0.15) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 16px;
+}
+
+.table-card:hover::before {
+  opacity: 1;
+}
+
+.table-card-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.table-title {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table-icon {
+  font-size: 22px;
+  color: #3b82f6;
+  transition: color 0.3s ease;
+}
+
+.table-card:hover .table-icon {
+  color: #2563eb;
+}
+
+.class-selector {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.class-selector .form-label {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  white-space: nowrap;
+}
+
+.class-selector .form-control {
+  width: 100%;
+  max-width: 250px;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.class-selector .form-control:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 650px;
+}
+
+.table th,
+.table td {
+  padding: 14px;
+  text-align: left;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.table th {
+  color: #6b7280;
+  font-weight: 600;
+  border-bottom: 2px solid #e5e7eb;
+  background: #f9fafb;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.table td {
+  color: #1f2937;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table-row {
+  transition: background 0.3s ease;
+}
+
+.table-row:hover {
+  background: #f1f5f9;
+}
+
+.rank-badge {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.rank-1 {
+  background: #ffd700;
+  color: #1f2937;
+}
+
+.rank-2 {
+  background: #c0c0c0;
+  color: #1f2937;
+}
+
+.rank-3 {
+  background: #cd7f32;
+  color: #1f2937;
+}
+
+.progress-bar {
+  background: #e5e7eb;
+  border-radius: 4px;
+  height: 8px;
+  width: 120px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, #16a34a, #4ade80);
+  transition: width 0.5s ease-in-out;
+}
+
+.marks-text {
+  font-size: 14px;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.loading-spinner {
+  font-size: 14px;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.loading-spinner::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 2px solid #3b82f6;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .table-card {
+    padding: 16px;
+  }
+
+  .table th,
+  .table td {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .progress-bar {
+    width: 100px;
+  }
+
+  .rank-badge {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-card {
+    padding: 12px;
+  }
+
+  .table-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .class-selector {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .class-selector .form-control {
+    max-width: 100%;
+  }
+
+  .table th,
+  .table td {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .progress-bar {
+    width: 80px;
+    height: 6px;
+  }
+
+  .marks-text {
+    font-size: 12px;
+  }
+
+  .rank-badge {
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .table-card {
+    padding: 10px;
+    margin: 6px;
+  }
+
+  .table-title {
+    font-size: 14px;
+  }
+
+  .table-icon {
+    font-size: 18px;
+  }
+
+  .class-selector .form-label {
+    font-size: 12px;
+  }
+
+  .class-selector .form-control {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  /* Collapse table into stacked layout */
+  .table-container {
+    overflow-x: visible;
+  }
+
+  .table {
+    min-width: 0;
+    display: block;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table tbody {
+    display: block;
+  }
+
+  .table-row {
+    display: block;
+    margin-bottom: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 12px;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  }
+
+  .table-row:hover {
+    transform: translateY(-2px);
+    background: #f1f5f9;
+  }
+
+  .table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 12px;
+    border-bottom: none;
+    text-align: right;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    font-weight: 500;
+    color: #6b7280;
+    text-align: left;
+    flex: 1;
+    margin-right: 10px;
+  }
+
+  .table td[data-label="Average Marks"] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .progress-bar {
+    width: 100%;
+    max-width: 150px;
+    height: 6px;
+    margin: 0;
+  }
+
+  .marks-text {
+    font-size: 12px;
+    margin-left: 10px;
+  }
+
+  .table td.text-center {
+    display: block;
+    text-align: center;
+  }
+
+  .table td.text-center::before {
+    display: none;
+  }
+
+  .rank-badge {
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    font-size: 9px;
+  }
+}

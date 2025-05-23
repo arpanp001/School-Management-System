@@ -1,0 +1,27 @@
+/* src/components/TeacherDashboardCardCss/AttendanceCard.css */
+.card {
+  color: #000;
+  padding: 15px;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.card p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.assignment-item {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.assignment-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}

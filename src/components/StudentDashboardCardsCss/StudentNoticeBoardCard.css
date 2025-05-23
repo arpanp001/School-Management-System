@@ -1,0 +1,144 @@
+.student-notice-board-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  overflow: hidden;
+  border-left: 5px solid #3b82f6;
+}
+
+.student-notice-board-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.student-notice-board-card h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.student-notice-board-card h2::before {
+  content: "📅";
+  font-size: 20px;
+}
+
+.student-notice-board-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.student-notice-board-card li.event-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  color: #1f2937;
+}
+
+.student-notice-board-card li.event-item:last-child {
+  border-bottom: none;
+}
+
+.student-notice-board-card .event-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.event-title span {
+  color: black;
+}
+
+.student-notice-board-card .event-icon {
+  font-size: 16px;
+}
+
+.student-notice-board-card .event-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.event-details span {
+  color: black;
+}
+
+.student-notice-board-card .event-type {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.student-notice-board-card .event-item.holiday .event-type {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.student-notice-board-card .event-item.festival .event-type {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.student-notice-board-card .event-item.school-function .event-type {
+  background: #e0f2fe;
+  color: #1e40af;
+}
+
+.student-notice-board-card p.no-data {
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  background: #f3f4f6;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+  .student-notice-board-card {
+    padding: 16px;
+    min-width: 280px;
+  }
+
+  .student-notice-board-card h2 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .student-notice-board-card li.event-item {
+    font-size: 13px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .student-notice-board-card .event-details {
+    align-items: flex-start;
+  }
+
+  .student-notice-board-card .event-type {
+    font-size: 11px;
+    padding: 2px 6px;
+  }
+
+  .student-notice-board-card p.no-data {
+    font-size: 13px;
+    padding: 8px;
+  }
+}

@@ -1,0 +1,162 @@
+/* ../../pages/AdminPagesStyle/AdminTeacherManagement.css */
+.admin-teacher-management-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-teacher-management-title {
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.teacher-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 1.1rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.form-input {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.form-input::placeholder {
+  color: #aaa;
+}
+
+.submit-btn {
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background-color: #0056b3;
+  transform: scale(1.02);
+}
+
+.submit-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-teacher-management-container {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .admin-teacher-management-title {
+    font-size: 1.5rem;
+  }
+
+  .form-group label {
+    font-size: 1rem;
+  }
+
+  .form-input {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    padding: 10px 15px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-teacher-management-container {
+    padding: 10px;
+  }
+
+  .admin-teacher-management-title {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .teacher-form {
+    gap: 15px;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .form-input {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  .submit-btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
+/* Add these styles to your existing AdminTeacherManagement.css */
+
+.error {
+  border-color: #dc3545 !important;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+/* Adjust existing styles if needed */
+.form-input.error:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 5px rgba(220, 53, 69, 0.3);
+}
+
+/* Update responsive designs */
+@media (max-width: 768px) {
+  .error-message {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .error-message {
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,149 @@
+.upcoming-events-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin: 10px;
+  flex: 1;
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover animation */
+}
+
+.upcoming-events-card:hover {
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.events-title {
+  font-size: 16px;
+  color: #4a5568; /* Softer gray for title */
+  margin-bottom: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-family: "Inter", sans-serif; /* Clean, modern font (optional) */
+}
+
+.events-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.event-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #edf2f7; /* Subtle border */
+  transition: background-color 0.2s ease; /* Smooth hover effect */
+}
+
+.event-item:last-child {
+  border-bottom: none;
+}
+
+.event-item:hover {
+  background-color: #f7fafc; /* Light gray hover background */
+}
+
+.event-content {
+  display: flex;
+  align-items: center;
+  flex: 1; /* Ensures content takes available space */
+}
+
+.event-icon {
+  margin-right: 10px;
+  color: #2d3748; /* Darker gray for icons */
+  font-size: 18px; /* Slightly larger for visibility */
+  transition: color 0.2s ease;
+}
+
+.event-item:hover .event-icon {
+  color: #3182ce; /* Blue on hover for interactivity */
+}
+
+.event-text {
+  font-size: 14px;
+  color: #2d3748; /* Darker text for readability */
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+}
+
+.event-date {
+  font-size: 12px;
+  color: #718096; /* Lighter gray for secondary info */
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  background: #edf2f7; /* Subtle pill background */
+  padding: 2px 8px;
+  border-radius: 12px; /* Rounded pill shape */
+}
+
+.no-events {
+  font-size: 14px;
+  color: #718096;
+  text-align: center;
+  padding: 12px;
+  font-style: italic;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .upcoming-events-card {
+    padding: 15px;
+    margin: 8px;
+  }
+
+  .events-title {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .event-item {
+    padding: 10px 0;
+  }
+
+  .event-text {
+    font-size: 13px;
+  }
+
+  .event-date {
+    font-size: 11px;
+    padding: 2px 6px;
+  }
+
+  .event-icon {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .upcoming-events-card {
+    padding: 12px;
+    margin: 5px;
+  }
+
+  .events-title {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .event-item {
+    padding: 8px 0;
+  }
+
+  .event-text {
+    font-size: 12px;
+  }
+
+  .event-date {
+    font-size: 10px;
+    padding: 1px 5px;
+  }
+
+  .event-icon {
+    font-size: 14px;
+    margin-right: 8px;
+  }
+}

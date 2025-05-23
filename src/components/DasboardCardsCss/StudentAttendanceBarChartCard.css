@@ -1,0 +1,444 @@
+.student-attendance-bar-chart-card {
+  background: #ffffff; /* Clean white background */
+  border-radius: 8px; /* Subtle rounding */
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Soft shadow */
+  margin: 0; /* Remove external margin to stay in place */
+  flex: 1; /* Take available space */
+  max-width: 100%; /* Ensure it doesn’t overflow */
+  box-sizing: border-box;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+.student-attendance-bar-chart-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); /* Subtle hover effect */
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.chart-title {
+  font-size: 16px;
+  color: #1a202c; /* Dark, professional gray */
+  margin: 0;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+}
+
+.chart-icon {
+  font-size: 20px;
+  color: #2b6cb0; /* Professional blue */
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.class-selector,
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.class-selector label,
+.toggle-container label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #2d3748;
+  font-family: "Inter", sans-serif;
+}
+
+.class-selector {
+  position: relative;
+  z-index: 10;
+}
+
+.class-selector select {
+  padding: 8px 28px 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  color: #1a202c;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  appearance: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  min-width: 160px;
+  max-width: 100%; /* Prevent overflow */
+}
+
+.class-selector::after {
+  content: "\25BC";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  color: #4a5568;
+  pointer-events: none;
+}
+
+.class-selector select:hover {
+  border-color: #2b6cb0;
+  box-shadow: 0 1px 6px rgba(43, 108, 176, 0.15);
+}
+
+.class-selector select:focus {
+  outline: none;
+  border-color: #2b6cb0;
+  box-shadow: 0 0 0 2px rgba(43, 108, 176, 0.2);
+}
+
+.class-selector select:disabled {
+  background-color: #f7fafc;
+  color: #a0aec0;
+  border-color: #e2e8f0;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.toggle-container input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #2b6cb0;
+}
+
+.toggle-container input[type="checkbox"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.chart-container {
+  height: 280px; /* Default height */
+  width: 100%; /* Full width of container */
+  position: relative;
+  background: #fafafa; /* Light gray background */
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Spinner */
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 14px;
+  color: #2d3748;
+  font-family: "Inter", sans-serif;
+}
+
+.spinner-circle {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #2b6cb0;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .chart-container {
+    height: 260px;
+  }
+
+  .class-selector select {
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .student-attendance-bar-chart-card {
+    padding: 16px;
+  }
+
+  .chart-title {
+    font-size: 14px;
+  }
+
+  .chart-icon {
+    font-size: 18px;
+  }
+
+  .chart-container {
+    height: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .student-attendance-bar-chart-card {
+    padding: 12px;
+  }
+
+  .chart-title {
+    font-size: 12px;
+  }
+
+  .chart-icon {
+    font-size: 16px;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .class-selector label,
+  .toggle-container label {
+    font-size: 11px;
+  }
+
+  .class-selector select {
+    font-size: 12px;
+    padding: 6px 24px 6px 10px;
+    min-width: 120px;
+  }
+
+  .class-selector::after {
+    right: 8px;
+    font-size: 9px;
+  }
+
+  .chart-container {
+    height: 200px;
+  }
+
+  .spinner {
+    font-size: 12px;
+  }
+
+  .spinner-circle {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .student-attendance-bar-chart-card {
+    padding: 10px;
+  }
+
+  .chart-title {
+    font-size: 10px;
+  }
+
+  .chart-icon {
+    font-size: 14px;
+  }
+
+  .class-selector label,
+  .toggle-container label {
+    font-size: 10px;
+  }
+
+  .class-selector select {
+    font-size: 10px;
+    padding: 5px 20px 5px 8px;
+    min-width: 100px;
+  }
+
+  .class-selector::after {
+    right: 6px;
+    font-size: 8px;
+  }
+
+  .toggle-container input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+  }
+
+  .chart-container {
+    height: 160px;
+  }
+
+  .spinner {
+    font-size: 10px;
+  }
+
+  .spinner-circle {
+    width: 16px;
+    height: 16px;
+    border-width: 2px;
+  }
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px; /* Reduced gap for compactness */
+  margin-bottom: 16px;
+  align-items: center; /* Vertically center all controls */
+}
+
+.class-selector {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Reduced gap between label and dropdown */
+  position: relative;
+  z-index: 10;
+}
+
+.class-selector label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #2d3748;
+  font-family: "Inter", sans-serif;
+}
+
+.class-selector select {
+  padding: 4px 20px 4px 6px; /* Reduced padding for smaller size */
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  font-size: 11px; /* Smaller font */
+  font-family: "Inter", sans-serif;
+  color: #1a202c;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  appearance: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  min-width: 100px; /* Smaller min-width */
+  max-width: 120px; /* Cap width for compactness */
+}
+
+.class-selector::after {
+  content: "\25BC";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 9px;
+  color: #4a5568;
+  pointer-events: none;
+}
+
+.class-selector select:hover {
+  border-color: #2b6cb0;
+  box-shadow: 0 1px 6px rgba(43, 108, 176, 0.15);
+}
+
+.class-selector select:focus {
+  outline: none;
+  border-color: #2b6cb0;
+  box-shadow: 0 0 0 2px rgba(43, 108, 176, 0.2);
+}
+
+.class-selector select:disabled {
+  background-color: #f7fafc;
+  color: #a0aec0;
+  border-color: #e2e8f0;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 0; /* Remove gap since checkbox is inside label */
+}
+
+.toggle-container label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #2d3748;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Space between text and checkbox */
+}
+
+.toggle-container input[type="checkbox"] {
+  width: 14px; /* Smaller checkbox */
+  height: 14px;
+  cursor: pointer;
+  accent-color: #2b6cb0;
+  margin: 0; /* Remove default margin */
+}
+
+.toggle-container input[type="checkbox"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive adjustments (update only relevant parts) */
+@media (max-width: 1024px) {
+  .class-selector select {
+    min-width: 110px;
+    max-width: 130px;
+  }
+}
+
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .class-selector label,
+  .toggle-container label {
+    font-size: 11px;
+  }
+
+  .class-selector select {
+    font-size: 11px;
+    padding: 5px 20px 5px 8px;
+    min-width: 100px;
+    max-width: 120px;
+  }
+
+  .class-selector::after {
+    right: 6px;
+    font-size: 8px;
+  }
+
+  .toggle-container input[type="checkbox"] {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .class-selector label,
+  .toggle-container label {
+    font-size: 10px;
+  }
+
+  .class-selector select {
+    font-size: 10px;
+    padding: 4px 18px 4px 6px;
+    min-width: 90px;
+    max-width: 110px;
+  }
+
+  .class-selector::after {
+    right: 5px;
+    font-size: 7px;
+  }
+
+  .toggle-container input[type="checkbox"] {
+    width: 12px;
+    height: 12px;
+  }
+}

@@ -1,0 +1,12 @@
+.App {
+  display: flex;
+}
+
+.content {
+  flex: 1;
+  margin-left: 260px; /* Matches Sidebar width */
+  background-color: #f8f9fa;
+  padding: 20px;
+  height: 100vh;
+  overflow-y: auto;
+}

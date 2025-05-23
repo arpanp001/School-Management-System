@@ -1,0 +1,172 @@
+/* General container styling */
+.admin-student-bus-assign {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* Heading styling */
+.admin-student-bus-assign h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Form styling */
+.admin-student-bus-assign form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+/* Select fields */
+.admin-student-bus-assign select {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.admin-student-bus-assign select:focus {
+  border-color: #3498db;
+}
+
+/* Button in form */
+.admin-student-bus-assign button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Assign button */
+.admin-student-bus-assign button[type="submit"] {
+  background-color: #3498db;
+  color: #ffffff;
+}
+
+.admin-student-bus-assign button[type="submit"]:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+/* Assignment list container */
+.assignment-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 0 10px;
+}
+
+/* Individual assignment item */
+.assignment-item {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.assignment-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Paragraphs in assignment item */
+.assignment-item p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.assignment-item p:first-of-type {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Remove button in assignment item */
+.assignment-item button.remove {
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #e74c3c;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.assignment-item button.remove:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .admin-student-bus-assign h2 {
+    font-size: 2rem;
+  }
+
+  .admin-student-bus-assign form {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .admin-student-bus-assign select {
+    width: 100%;
+  }
+
+  .assignment-list {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .assignment-item {
+    padding: 15px;
+  }
+
+  .assignment-item p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-student-bus-assign {
+    padding: 10px;
+  }
+
+  .admin-student-bus-assign h2 {
+    font-size: 1.8rem;
+  }
+
+  .admin-student-bus-assign form {
+    padding: 10px;
+  }
+
+  .assignment-item {
+    padding: 10px;
+  }
+
+  .assignment-item button.remove {
+    width: 100%;
+    margin: 5px 0;
+  }
+}

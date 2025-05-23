@@ -1,0 +1,233 @@
+.student-revenue-report-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  width: 100%;
+  flex: 2;
+  border-left: 4px solid #6366f1;
+}
+
+.revenue-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.revenue-card-title {
+  font-size: 16px;
+  color: #111827;
+  margin: 0;
+  font-weight: 600;
+}
+
+.revenue-card-legend {
+  display: flex;
+  gap: 20px;
+  background-color: rgb(214, 209, 202);
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+.revenue-card-legend:hover {
+  transform: translateY(-2px);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.legend-item:hover {
+  color: #111827;
+  transform: scale(1.05);
+}
+
+.legend-item:focus {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.legend-item:hover .legend-dot {
+  transform: scale(1.2);
+}
+
+.legend-dot.green {
+  background-color: #22c55e;
+}
+
+.legend-dot.red {
+  background-color: #ef4444;
+}
+
+.revenue-filters {
+  display: flex;
+  gap: 10px;
+}
+
+.revenue-select {
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  color: #374151;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.revenue-select:focus {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+  border-color: #6366f1;
+}
+
+.revenue-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.revenue-total {
+  background: f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.revenue-total span {
+  color: black;
+}
+
+.revenue-total:hover {
+  transform: translateY(-2px);
+}
+
+.revenue-total:focus-within {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+.revenue-total h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #111827;
+  line-height: 1.2;
+  animation: pulse 1.5s ease-in-out;
+}
+
+.revenue-total p {
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(72, 69, 69);
+  margin: 0;
+  animation: pulse 1.5s ease-in-out;
+}
+
+.revenue-total p::before {
+  content: "Attendance Rate: ";
+  color: rgb(72, 69, 69);
+}
+
+.revenue-total p::after {
+  content: "%";
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.revenue-chart {
+  height: 200px;
+  margin-top: 10px;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.spinner {
+  font-size: 24px;
+  color: #6366f1;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .revenue-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .revenue-card-legend {
+    width: 100%;
+    justify-content: center;
+    padding: 6px 10px;
+  }
+
+  .legend-item {
+    font-size: 13px;
+    gap: 6px;
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .revenue-total {
+    padding: 12px;
+  }
+
+  .revenue-total h2 {
+    font-size: 24px;
+  }
+
+  .revenue-total p {
+    font-size: 14px;
+  }
+}

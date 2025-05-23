@@ -1,0 +1,207 @@
+/* General container styling */
+.admin-routes {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* Heading styling */
+.admin-routes h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Form styling */
+.admin-routes form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+/* Input fields */
+.admin-routes input,
+.admin-routes textarea {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.admin-routes textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.admin-routes input:focus,
+.admin-routes textarea:focus {
+  border-color: #3498db;
+}
+
+/* Buttons in form */
+.admin-routes button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Submit button (Add/Update) */
+.admin-routes button[type="submit"] {
+  background-color: #3498db;
+  color: #ffffff;
+}
+
+.admin-routes button[type="submit"]:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+/* Cancel button */
+.admin-routes button[type="button"] {
+  background-color: #e74c3c;
+  color: #ffffff;
+}
+
+.admin-routes button[type="button"]:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* Route list container */
+.route-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 0 10px;
+}
+
+/* Individual route item */
+.route-item {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.route-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Paragraphs in route item */
+.route-item p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.route-item p:first-of-type {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Buttons in route item */
+.route-item button {
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Edit button */
+.route-item button.edit {
+  background-color: #2ecc71;
+  color: #ffffff;
+}
+
+.route-item button.edit:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+}
+
+/* Delete button */
+.route-item button.delete {
+  background-color: #e74c3c;
+  color: #ffffff;
+}
+
+.route-item button.delete:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .admin-routes h2 {
+    font-size: 2rem;
+  }
+
+  .admin-routes form {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .admin-routes input,
+  .admin-routes textarea {
+    width: 100%;
+  }
+
+  .route-list {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .route-item {
+    padding: 15px;
+  }
+
+  .route-item p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-routes {
+    padding: 10px;
+  }
+
+  .admin-routes h2 {
+    font-size: 1.8rem;
+  }
+
+  .admin-routes form {
+    padding: 10px;
+  }
+
+  .route-item {
+    padding: 10px;
+  }
+
+  .route-item button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}

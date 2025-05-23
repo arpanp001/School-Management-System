@@ -1,0 +1,224 @@
+/* StudentLibraryBooks.css */
+/* Modern and professional styling for the student library interface */
+
+.slb-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.slb-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 1rem;
+}
+
+.slb-header-icon {
+  margin-right: 0.75rem;
+  color: #2563eb;
+}
+
+.slb-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.slb-search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.slb-search-wrapper {
+  position: relative;
+  flex: 1;
+  max-width: 500px;
+}
+
+.slb-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+}
+
+.slb-search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.slb-search-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+.slb-search-results {
+  font-size: 0.875rem;
+  color: #566170;
+}
+
+.slb-card {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.slb-loading {
+  padding: 3rem;
+  text-align: center;
+  color: #64748b;
+  font-style: italic;
+}
+
+.slb-no-results {
+  padding: 3rem;
+  text-align: center;
+  color: #64748b;
+}
+
+.slb-no-results-icon {
+  margin-bottom: 1rem;
+  color: #94a3b8;
+}
+
+.slb-table-container {
+  overflow-x: auto;
+}
+
+.slb-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.slb-table-header {
+  background-color: #e0e6eb;
+}
+
+.slb-table-cell {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.slb-table-row:hover {
+  background-color: #f8fafc;
+}
+
+.slb-cell-title {
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.slb-availability {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.slb-available {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.slb-unavailable {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.slb-request-button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.slb-request-button:hover {
+  background-color: #1d4ed8;
+}
+
+.slb-request-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+.slb-unavailable-text {
+  color: #ef4444;
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+.slb-info-section {
+  margin-top: 2rem;
+}
+
+.slb-info-card {
+  background-color: #ebf1f7;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  border-left: 4px solid #2563eb;
+}
+
+.slb-info-title {
+  color: #1e293b;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.slb-info-list {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: #475569;
+}
+
+.slb-info-list li {
+  margin-bottom: 0.5rem;
+}
+
+.slb-toast-icon {
+  margin-right: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .slb-container {
+    padding: 1rem;
+  }
+
+  .slb-search-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .slb-search-wrapper {
+    max-width: 100%;
+    margin-bottom: 0.75rem;
+  }
+
+  .slb-cell-isbn,
+  .slb-cell-genre {
+    display: none;
+  }
+}

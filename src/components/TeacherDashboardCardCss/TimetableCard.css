@@ -1,0 +1,113 @@
+.timetable-card {
+  flex: 0 1 30%;
+  height: 300px;
+  min-width: 0;
+  background: linear-gradient(
+    145deg,
+    rgba(69, 123, 157, 0.95),
+    /* Vibrant blue */ rgba(168, 218, 220, 0.9) /* Light purple */
+  );
+  border-radius: 12px;
+  padding: 20px;
+  color: #1d3557; /* Dark blue for primary text */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.timetable-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.timetable-card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1d3557;
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+.work-hours-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.work-hours {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: #2a9d8f; /* Green badge */
+  padding: 10px 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.work-hours.loading {
+  background: #457b9d; /* Softer blue for loading */
+  font-size: 1.2rem;
+}
+
+.work-hours.no-data {
+  background: #e63946; /* Red for no data */
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .timetable-card {
+    flex: 0 1 100%;
+    max-width: 100%;
+    margin: 8px 0;
+    padding: 16px;
+    height: 360px;
+  }
+
+  .timetable-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .work-hours {
+    font-size: 1.8rem;
+    padding: 8px 16px;
+  }
+
+  .work-hours.loading,
+  .work-hours.no-data {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timetable-card {
+    padding: 12px;
+    border-radius: 10px;
+    height: 360px;
+  }
+
+  .timetable-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .work-hours {
+    font-size: 1.6rem;
+    padding: 6px 12px;
+  }
+
+  .work-hours.loading,
+  .work-hours.no-data {
+    font-size: 1rem;
+  }
+}
+
+@media (hover: none) {
+  .timetable-card:hover {
+    transform: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+}

@@ -1,0 +1,197 @@
+.chart-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin: 10px;
+  flex: 1;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.chart-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(74, 144, 226, 0.1) 0%,
+    rgba(245, 101, 101, 0.1) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.chart-card:hover::before {
+  opacity: 1;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.chart-title-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.chart-title {
+  font-size: 14px;
+  color: #718096;
+  margin: 0;
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+.chart-icon {
+  font-size: 20px;
+  color: #4a90e2;
+}
+
+.chart-stats {
+  display: flex;
+  align-items: center;
+}
+
+.chart-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2d3748;
+  margin-right: 10px;
+}
+
+.chart-percentage {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.chart-percentage.positive {
+  color: #38a169;
+}
+
+.chart-percentage.negative {
+  color: #f56565;
+}
+
+.chart-body {
+  height: 20px; /* Reduced height for progress bar */
+  margin-bottom: 15px; /* Space before details */
+}
+
+.progress-bar {
+  width: 100%;
+  height: 100%;
+  background: #edf2f7; /* Track color */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    #38a169,
+    #68d391
+  ); /* Green gradient for fill */
+  transition: width 0.5s ease-in-out; /* Smooth transition for width changes */
+}
+
+.chart-details {
+  padding-top: 10px;
+  font-size: 12px;
+  color: #718096;
+}
+
+.chart-detail {
+  margin: 5px 0;
+}
+
+.status-breakdown h6 {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #2d3748;
+}
+
+.status-breakdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.status-breakdown li {
+  margin-bottom: 3px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chart-card {
+    padding: 15px;
+  }
+
+  .chart-title {
+    font-size: 12px;
+  }
+
+  .chart-icon {
+    font-size: 18px;
+  }
+
+  .chart-value {
+    font-size: 20px;
+  }
+
+  .chart-percentage {
+    font-size: 14px;
+  }
+
+  .chart-body {
+    height: 15px; /* Slightly smaller on mobile */
+  }
+
+  .chart-details {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-card {
+    padding: 10px;
+  }
+
+  .chart-title {
+    font-size: 10px;
+  }
+
+  .chart-icon {
+    font-size: 16px;
+  }
+
+  .chart-value {
+    font-size: 18px;
+  }
+
+  .chart-percentage {
+    font-size: 12px;
+  }
+
+  .chart-body {
+    height: 12px; /* Even smaller on small screens */
+  }
+
+  .chart-details {
+    font-size: 10px;
+  }
+}
+/* Existing styles remain unchanged */
+.chart-details .overdue-highlight {
+  color: #d32f2f; /* Material red for urgency */
+  font-weight: bold;
+}

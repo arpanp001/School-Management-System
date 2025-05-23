@@ -1,0 +1,326 @@
+/* Main container */
+.timetable-container {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Heading styles */
+.timetable-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: #1e3a8a;
+  text-align: center;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.timetable-title::after {
+  content: "";
+  position: absolute;
+  bottom: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 5px;
+  background: linear-gradient(to right, #1e40af, #60a5fa);
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
+}
+
+/* Loading state */
+.timetable-loading {
+  font-size: 1.25rem;
+  color: #4b5563;
+  text-align: center;
+  padding: 3rem 0;
+  font-style: italic;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Error state */
+.timetable-error {
+  font-size: 1.125rem;
+  color: #dc2626;
+  text-align: center;
+  padding: 2rem 0;
+  background-color: #fef2f2;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* No schedule message */
+.timetable-no-schedule-message {
+  font-size: 1.125rem;
+  color: #4b5563;
+  text-align: center;
+  padding: 2rem 0;
+  background-color: #e0f2fe;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Day filter */
+.timetable-day-filter {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.timetable-day-select {
+  padding: 0.75rem 1rem;
+  border: 1px solid #bfdbfe;
+  border-radius: 0.5rem;
+  width: 250px;
+  background-color: #ffffff;
+  font-size: 1rem;
+  color: #1f2937;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.timetable-day-select:hover {
+  border-color: #60a5fa;
+}
+
+.timetable-day-select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+}
+
+/* Schedule grid */
+.timetable-schedule-grid {
+  flex: 1; /* Allow the grid to grow and fill remaining space */
+  overflow-x: auto;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  min-width: 600px; /* Ensure minimum width for readability */
+}
+
+/* Grid header */
+.timetable-grid-header {
+  display: grid;
+  grid-template-columns: 150px repeat(6, minmax(120px, 1fr)); /* Fixed time slot + flexible day columns */
+  gap: 1px;
+  padding: 0.5rem 0;
+  background-color: #f9fafb;
+  border-bottom: 2px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.timetable-grid-time-slot {
+  font-weight: 700;
+  color: #1e40af;
+  font-size: 1rem;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  text-align: center;
+  background-color: #f1f5f9;
+  border-right: 1px solid #e2e8f0;
+}
+
+.timetable-day-title {
+  font-weight: 700;
+  color: #1e40af;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  text-align: center;
+  background-color: #f1f5f9;
+  border-right: 1px solid #e2e8f0;
+}
+
+/* Highlight current day in header (only title) */
+.timetable-current-day {
+  background-color: #e0f7fa; /* Soft teal background */
+  border: 2px solid #006d77; /* Deep teal border */
+  border-radius: 0.25rem;
+  font-weight: 800;
+}
+
+/* Grid row */
+.timetable-grid-row {
+  display: grid;
+  grid-template-columns: 150px repeat(6, minmax(120px, 1fr)); /* Fixed time slot + flexible day columns */
+  gap: 1px;
+  padding: 0.5rem 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  transition: background-color 0.3s ease;
+}
+
+.timetable-grid-row:hover {
+  background-color: #f5f5f5;
+}
+
+.timetable-grid-row:last-child {
+  border-bottom: none;
+}
+
+/* Grid cell */
+.timetable-grid-cell {
+  padding: 0.75rem;
+  text-align: center;
+  min-height: 80px; /* Ensure cells have a minimum height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-right: 1px solid #e2e8f0;
+}
+
+.timetable-grid-cell:last-child {
+  border-right: none;
+}
+
+/* Schedule item */
+.timetable-schedule-item {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  border-left: 4px solid; /* Border-left color set dynamically */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Hover effect to darken background slightly while preserving readability */
+.timetable-schedule-item:hover {
+  filter: brightness(90%); /* Darken the background slightly */
+  transform: translateX(5px);
+}
+
+.timetable-schedule-time {
+  font-weight: 600;
+  color: #2563eb;
+  font-size: 1rem;
+}
+
+.timetable-schedule-subject {
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.timetable-schedule-class {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.timetable-no-schedule {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-style: italic;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.timetable-grid-row {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .timetable-container {
+    padding: 1rem;
+  }
+
+  .timetable-title {
+    font-size: 1.5rem;
+  }
+
+  .timetable-day-select {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .timetable-schedule-grid {
+    min-width: 600px; /* Ensure horizontal scrolling on small screens */
+  }
+
+  .timetable-grid-header,
+  .timetable-grid-row {
+    grid-template-columns: 120px repeat(6, minmax(100px, 1fr)); /* Adjust time slot and day widths */
+  }
+
+  .timetable-grid-time-slot,
+  .timetable-day-title {
+    font-size: 0.9rem;
+  }
+
+  .timetable-grid-cell {
+    min-height: 60px;
+    padding: 0.5rem;
+  }
+
+  .timetable-schedule-item {
+    padding: 0.5rem;
+  }
+
+  .timetable-schedule-subject,
+  .timetable-schedule-class {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .timetable-title {
+    font-size: 1.2rem;
+  }
+
+  .timetable-grid-header,
+  .timetable-grid-row {
+    grid-template-columns: 100px repeat(6, minmax(80px, 1fr)); /* Further adjust widths */
+  }
+
+  .timetable-grid-time-slot,
+  .timetable-day-title {
+    font-size: 0.8rem;
+  }
+
+  .timetable-grid-cell {
+    min-height: 50px;
+    padding: 0.3rem;
+  }
+
+  .timetable-schedule-item {
+    padding: 0.3rem;
+  }
+
+  .timetable-schedule-subject,
+  .timetable-schedule-class {
+    font-size: 0.75rem;
+  }
+}

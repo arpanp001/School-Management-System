@@ -1,0 +1,228 @@
+/* TeacherPunch.css */
+
+/* Container styling */
+.container.mt-4 {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f7fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styling */
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+h4 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #34495e;
+  margin-bottom: 15px;
+}
+
+/* Punch Buttons */
+.mb-3 .btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  border-color: #3498db;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+  border-color: #2980b9;
+}
+
+.btn-secondary {
+  background-color: #7f8c8d;
+  border-color: #7f8c8d;
+}
+
+.btn-secondary:hover {
+  background-color: #6c7778;
+  border-color: #6c7778;
+}
+
+.me-2 {
+  margin-right: 10px;
+}
+
+/* Webcam Section */
+.webcam-container {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+video {
+  border-radius: 8px;
+  border: 2px solid #ecf0f1;
+}
+
+.mt-2 .btn-success {
+  background-color: #2ecc71;
+  border-color: #2ecc71;
+}
+
+.mt-2 .btn-success:hover {
+  background-color: #27ae60;
+  border-color: #27ae60;
+}
+
+.mt-2 .btn-danger {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+}
+
+.mt-2 .btn-danger:hover {
+  background-color: #c0392b;
+  border-color: #c0392b;
+}
+
+/* Total Work Hours */
+.total-hours {
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.badge.bg-dark {
+  font-size: 1rem;
+  padding: 6px 12px;
+  background-color: #2c3e50 !important;
+}
+
+/* Attendance Logs */
+.attendance-logs {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+}
+
+.btn-group .btn-outline-primary {
+  border-color: #3498db;
+  color: #3498db;
+  transition: all 0.3s ease;
+}
+
+.btn-group .btn-outline-primary:hover,
+.btn-group .btn-outline-primary.active {
+  background-color: #3498db;
+  color: #fff;
+  border-color: #3498db;
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #ecf0f1;
+}
+
+.table thead th {
+  background-color: #34495e;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 2px solid #2c3e50;
+}
+
+.table td {
+  padding: 12px 15px;
+  vertical-align: middle;
+  text-align: center;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.badge {
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  border-radius: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container.mt-4 {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  .mb-3 .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .me-2 {
+    margin-right: 0;
+  }
+
+  .webcam-container video {
+    width: 100%;
+    height: auto;
+  }
+
+  .btn-group {
+    flex-direction: column;
+  }
+
+  .btn-group .btn {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .table th,
+  .table td {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+}
+
+/* Custom scrollbar for table overflow */
+.attendance-logs::-webkit-scrollbar {
+  height: 8px;
+}
+
+.attendance-logs::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.attendance-logs::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.attendance-logs::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

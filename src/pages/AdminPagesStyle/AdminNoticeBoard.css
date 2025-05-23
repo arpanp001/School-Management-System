@@ -1,0 +1,17 @@
+/* AdminNoticeBoard.css */
+.admin-notice-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #f9fafb; /* Light gray background */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.admin-notice-heading {
+  font-size: 1.875rem; /* 30px */
+  font-weight: 700;
+  color: #1f2937; /* Gray-800 */
+  margin-bottom: 24px;
+  text-align: center;
+}

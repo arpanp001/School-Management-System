@@ -1,0 +1,328 @@
+/* src/pages/StudentPagesStyle/StudentTransport.css */
+
+/* Main container */
+.stp__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  font-family: "Arial", sans-serif;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* Header section */
+.stp__header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.stp__title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.stp__title-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #3498db, #2980b9);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Cards container */
+.stp__cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  padding: 0 10px;
+}
+
+/* Card styling */
+.stp__card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.stp__card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Card variations */
+.stp__card--bus {
+  border-top: 5px solid #3498db;
+}
+
+.stp__card--route {
+  border-top: 5px solid #2ecc71;
+}
+
+.stp__card--driver {
+  border-top: 5px solid #e74c3c;
+}
+
+/* Card header */
+.stp__card-header {
+  display: flex;
+  align-items: center;
+  padding: 18px 20px;
+  background: linear-gradient(
+    to right,
+    rgba(245, 247, 250, 0.5),
+    rgba(255, 255, 255, 0.5)
+  );
+  border-bottom: 1px solid #eaecef;
+}
+
+.stp__card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  position: relative;
+}
+
+.stp__card--bus .stp__card-icon {
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+.stp__card--route .stp__card-icon {
+  background-color: rgba(46, 204, 113, 0.1);
+}
+
+.stp__card--driver .stp__card-icon {
+  background-color: rgba(231, 76, 60, 0.1);
+}
+
+/* Icons */
+.stp__icon-bus::before,
+.stp__icon-route::before,
+.stp__icon-driver::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.stp__icon-bus::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%233498db' viewBox='0 0 24 24'%3E%3Cpath d='M4 16c0 1.1.9 2 2 2h1v1c0 .55.45 1 1 1s1-.45 1-1v-1h6v1c0 .55.45 1 1 1s1-.45 1-1v-1h1c1.1 0 2-.9 2-2v-2H4v2zm12-6c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1s.45-1 1-1h6c.55 0 1 .45 1 1zM4 6c0-1.1.9-2 2-2h12c1.1 0 2 .9 2 2v6H4V6zm2-1c0 .55.45 1 1 1s1-.45 1-1-.45-1-1-1-1 .45-1 1zm12 0c0-.55-.45-1-1-1s-1 .45-1 1 .45 1 1 1 1-.45 1-1z'/%3E%3C/svg%3E");
+}
+
+.stp__icon-route::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232ecc71' viewBox='0 0 24 24'%3E%3Cpath d='M3 11h8V3H3v8zm2-6h4v4H5V5zM3 21h8v-8H3v8zm2-6h4v4H5v-4zM13 3v8h8V3h-8zm6 6h-4V5h4v4zM13 13h2v2h-2zM17 13h2v2h-2zM13 17h2v2h-2zM17 17h2v2h-2z'/%3E%3C/svg%3E");
+}
+
+.stp__icon-driver::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23e74c3c' viewBox='0 0 24 24'%3E%3Cpath d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E");
+}
+
+/* Card title */
+.stp__card-title {
+  font-size: 1.5rem;
+  color: #34495e;
+  margin: 0;
+  font-weight: 600;
+}
+
+.stp__card--bus .stp__card-title {
+  color: #3498db;
+}
+
+.stp__card--route .stp__card-title {
+  color: #2ecc71;
+}
+
+.stp__card--driver .stp__card-title {
+  color: #e74c3c;
+}
+
+/* Card content */
+.stp__card-content {
+  padding: 20px;
+}
+
+/* Information items */
+.stp__info-item {
+  display: flex;
+  margin-bottom: 12px;
+  align-items: baseline;
+  border-bottom: 1px dashed #ecf0f1;
+  padding-bottom: 12px;
+}
+
+.stp__info-item:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.stp__info-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #7f8c8d;
+  width: 100px;
+  flex-shrink: 0;
+}
+
+.stp__info-value {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  flex-grow: 1;
+}
+
+.stp__info-item--stops {
+  flex-direction: column;
+}
+
+.stp__info-item--stops .stp__info-label {
+  margin-bottom: 8px;
+}
+
+.stp__info-value--stops {
+  line-height: 1.5;
+  padding-left: 5px;
+  word-wrap: break-word;
+}
+
+/* Loading state */
+.stp__loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  text-align: center;
+}
+
+.stp__loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+  margin-bottom: 20px;
+}
+
+.stp__loading-text {
+  font-size: 1.3rem;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* No data state */
+.stp__no-data-container {
+  text-align: center;
+  padding: 50px 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  max-width: 600px;
+  margin: 100px auto;
+}
+
+.stp__no-data-icon {
+  font-size: 5rem;
+  color: #d1d8e0;
+  margin-bottom: 15px;
+}
+
+.stp__no-data-icon .stp__icon-bus::before {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  opacity: 0.5;
+}
+
+.stp__no-data-title {
+  font-size: 1.8rem;
+  color: #34495e;
+  margin-bottom: 15px;
+}
+
+.stp__no-data-message {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stp__container {
+    padding: 20px 15px;
+  }
+
+  .stp__title {
+    font-size: 2rem;
+  }
+
+  .stp__cards-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .stp__card-title {
+    font-size: 1.3rem;
+  }
+
+  .stp__info-label,
+  .stp__info-value {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stp__container {
+    padding: 15px 10px;
+  }
+
+  .stp__title {
+    font-size: 1.8rem;
+  }
+
+  .stp__card-header {
+    padding: 15px;
+  }
+
+  .stp__card-content {
+    padding: 15px;
+  }
+
+  .stp__card-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .stp__info-label {
+    width: 90px;
+  }
+
+  .stp__no-data-container {
+    padding: 30px 15px;
+  }
+}

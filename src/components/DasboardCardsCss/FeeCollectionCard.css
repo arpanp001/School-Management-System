@@ -1,0 +1,212 @@
+.fee-collection-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.fee-title {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.fee-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #888;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.stat-value.paid {
+  color: #28a745;
+}
+
+.stat-value.pending {
+  color: #dc3545;
+}
+
+.progress-circle-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.progress-circle-container[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.progress-circle {
+  transform: rotate(-90deg); /* Start the progress from the top */
+}
+
+.progress-circle-bg {
+  fill: none;
+  stroke: #e9ecef; /* Background circle color */
+  stroke-width: 5;
+}
+
+.progress-circle-fill {
+  fill: none;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.3s ease-in-out; /* Smooth animation for updates */
+}
+
+.progress-text {
+  position: absolute;
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+}
+
+.overflow-badge {
+  display: inline-block;
+  margin-left: 5px;
+  background: #ffc107;
+  color: #333;
+  width: 12px;
+  height: 12px;
+  line-height: 12px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 8px;
+}
+
+.progress-label {
+  position: absolute;
+  top: 100%;
+  margin-top: 5px;
+  font-size: 10px;
+  color: #888;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .fee-collection-card {
+    padding: 15px;
+  }
+
+  .fee-title {
+    font-size: 12px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+  }
+
+  .stat-value {
+    font-size: 16px;
+  }
+
+  .progress-circle-container {
+    margin-top: 15px;
+  }
+
+  .progress-circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .progress-circle-bg,
+  .progress-circle-fill {
+    cx: 20;
+    cy: 20;
+    r: 15; /* Smaller radius */
+  }
+
+  .progress-text {
+    font-size: 10px;
+  }
+
+  .overflow-badge {
+    width: 10px;
+    height: 10px;
+    line-height: 10px;
+    font-size: 7px;
+  }
+
+  .progress-label {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fee-collection-card {
+    padding: 10px;
+  }
+
+  .fee-title {
+    font-size: 10px;
+  }
+
+  .stat-label {
+    font-size: 8px;
+  }
+
+  .stat-value {
+    font-size: 14px;
+  }
+
+  .progress-circle-container {
+    margin-top: 10px;
+  }
+
+  .progress-circle {
+    width: 30px;
+    height: 30px;
+  }
+
+  .progress-circle-bg,
+  .progress-circle-fill {
+    cx: 15;
+    cy: 15;
+    r: 10; /* Even smaller radius */
+  }
+
+  .progress-text {
+    font-size: 8px;
+  }
+
+  .overflow-badge {
+    width: 8px;
+    height: 8px;
+    line-height: 8px;
+    font-size: 6px;
+  }
+
+  .progress-label {
+    font-size: 6px;
+  }
+}

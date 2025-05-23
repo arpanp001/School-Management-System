@@ -1,0 +1,219 @@
+.grades-card-container {
+  flex: 0 1 720px;
+  min-width: 0;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.98),
+    rgba(235, 240, 255, 0.92)
+  );
+  border-radius: 16px;
+  padding: 24px;
+  color: #1f2937;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  margin: 16px auto;
+}
+
+.grades-card-container:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+}
+
+.grades-card-container h3 {
+  margin: 0 0 20px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111827;
+  border-bottom: 3px solid #dbeafe;
+  padding-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+
+.subject-select {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 1rem;
+  color: #1f2937;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%23374151%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M7.247%2011.14L2.451%205.658C1.885%205.013%202.345%204%203.204%204h9.592a1%201%200%200%201%20.753%201.659l-4.796%205.48a1%201%200%200%201-1.506%200z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.subject-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.grades-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.grade-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  border-left: 5px solid #3b82f6;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.grade-item:hover {
+  background: #ffffff;
+  transform: translateX(4px);
+}
+
+.grade-rank {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1d4ed8;
+  margin-right: 16px;
+  min-width: 40px;
+  text-align: center;
+  background: #eff6ff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.grade-details {
+  flex: 1;
+}
+
+.grade-details strong {
+  display: block;
+  font-size: 1.1rem;
+  color: #1e40af;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.grade-details span {
+  display: block;
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.4;
+}
+
+.grade-details span:first-of-type {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.no-grades {
+  color: #6b7280;
+  font-style: italic;
+  text-align: center;
+  padding: 20px;
+  background: rgba(243, 244, 246, 0.6);
+  border-radius: 10px;
+  margin: 0;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .grades-card-container {
+    flex: 0 1 100%;
+    max-width: 100%;
+    margin: 12px 8px;
+    padding: 20px;
+  }
+
+  .grades-card-container h3 {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+  }
+
+  .subject-select {
+    max-width: 100%;
+    font-size: 0.95rem;
+    padding: 8px 10px;
+  }
+
+  .grade-item {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 12px;
+  }
+
+  .grade-rank {
+    margin-right: 12px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grades-card-container {
+    padding: 16px;
+    border-radius: 12px;
+    margin: 8px 4px;
+  }
+
+  .grades-card-container h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+
+  .subject-select {
+    font-size: 0.9rem;
+    padding: 7px 9px;
+    background-size: 14px;
+  }
+
+  .grade-item {
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .grade-rank {
+    margin-bottom: 8px;
+    margin-right: 0;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 1rem;
+  }
+
+  .grade-details strong {
+    font-size: 1rem;
+  }
+
+  .grade-details span {
+    font-size: 0.85rem;
+  }
+
+  .no-grades {
+    padding: 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (hover: none) {
+  .grades-card-container:hover {
+    transform: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .grade-item:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: none;
+  }
+}
