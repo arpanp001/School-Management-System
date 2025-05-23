@@ -160,3 +160,62 @@ Frontend: HTML, CSS, JavaScript
 Backend: Firebase (Authentication & Database)
 
 Email Integration: Email.js
+
+🔧 Setup Instructions
+✅ Firebase Setup
+Go to Firebase Console, create a project.
+
+Navigate to Project Settings → Get web configuration.
+
+Replace your Firebase config in your app:
+
+js
+Copy
+Edit
+const firebaseConfig = {
+apiKey: "YOUR_API_KEY",
+authDomain: "YOUR_AUTH_DOMAIN",
+projectId: "YOUR_PROJECT_ID",
+storageBucket: "YOUR_STORAGE_BUCKET",
+messagingSenderId: "YOUR_MSG_ID",
+appId: "YOUR_APP_ID",
+};
+Set up Authentication → Email/Password in Firebase Console.
+
+Create Firestore Database → Set rules to allow authenticated read/write.
+
+Configure Storage (for images, ID cards).
+
+✅ Email.js Setup
+Go to Email.js → Create account.
+
+Create new service (e.g., Gmail).
+
+Create email template with fields like user_email, message, name.
+
+Add your Service ID, Template ID, and User ID to your .env file:
+
+env
+Copy
+Edit
+REACT_APP_EMAILJS_SERVICE_ID=your_service_id
+REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id
+REACT_APP_EMAILJS_USER_ID=your_user_id
+Use in your code:
+
+js
+Copy
+Edit
+emailjs.send(
+process.env.REACT_APP_EMAILJS_SERVICE_ID,
+process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+templateParams,
+process.env.REACT_APP_EMAILJS_USER_ID
+);
+
+📬 Contact
+Developer: Arpan Pawar
+
+Email: pawararpan1322@gmail.com
+
+LinkedIn: https://www.linkedin.com/in/arpan-pawar-22b0a62aa/
